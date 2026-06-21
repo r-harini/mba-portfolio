@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0A0A0A;
+  --surface: #141414;
+  --ink: #F8F7F4;
+  --ink-2: #9A9994;
+  --ink-3: #5A5955;
+  --green: #007C00;
+  --green-muted: #004D00;
+  --green-light: #0FBF0F;
+  --border: rgba(248, 247, 244, 0.08);
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    color: var(--ink);
+    scroll-behavior: auto;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  #home,
+  #work,
+  #experience,
+  #about,
+  #beyond,
+  #contact {
+    scroll-margin-top: -72px;
+  }
+}
+
+::selection {
+  background: var(--green-muted);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
