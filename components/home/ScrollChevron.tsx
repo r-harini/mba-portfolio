@@ -20,18 +20,23 @@ export function ScrollChevron() {
     observerRef.current = new IntersectionObserver(
       (entries) => {
         // Pick whichever observed section has the largest visible area right now
-        let mostVisible: { id: string; ratio: number } | null = null;
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const ratio = entry.intersectionRatio;
-            if (!mostVisible || ratio > mostVisible.ratio) {
-              mostVisible = { id: entry.target.id, ratio };
-            }
-          }
-        });
-        if (mostVisible) {
-          setCurrentSection(mostVisible.id);
-        }
+        type VisibleSection = { id: string; ratio: number };
+let mostVisible: VisibleSection | null = null;
+
+entries.forEach((entry) => {
+  if (entry.isIntersecting) {
+    const ratio = entry.intersectionRatio;
+    if (mostVisible === null || ratio > mostVisible.ratio) {
+      const next: VisibleSection = { id: entry.target.id, ratio };
+      mostVisible = next;
+    }
+  }
+});
+
+if (mostVisible !== null) {
+  const result: VisibleSection = mostVisible;
+  setCurrentSection(result.id);
+}
       },
       { threshold: [0.3, 0.5, 0.7] }
     );
