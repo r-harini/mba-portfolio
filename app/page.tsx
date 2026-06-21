@@ -20,7 +20,7 @@ export default async function HomePage() {
   return (
     <main>
       <Hero config={config} />
-      <SelectedWork projects={projects}/>
+      {/* <SelectedWork projects={projects}/> */}
       <Experience roles={roles} />
       <About sections={aboutSections} config={config} />
       <BeyondWork photos={photos} />

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Linkedin, Mail, Github, ChevronDown, ScrollText } from "lucide-react";
 import { Navbar } from "@/components/ui/Navbar";
+import type { LucideIcon } from "lucide-react";
 
 interface HeroProps {
   config: Record<string, string>;
@@ -160,7 +161,7 @@ function SocialIcon({
   href,
   label,
 }: {
-  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>;
+  icon: LucideIcon;
   href?: string;
   label: string;
 }) {

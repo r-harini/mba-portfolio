@@ -168,16 +168,16 @@ export function BeyondWork({ photos }: BeyondWorkProps) {
                     <X size={18} strokeWidth={1.5} />
                   </button>
                   <div>
-                    <p className="text-[11px] font-medium tracking-[0.12em] uppercase mb-4" style={{ color: "var(--green)" }}>
+                    <p className="text-[13px] font-medium tracking-[0.12em] uppercase mb-4" style={{ color: "var(--green)" }}>
                       {selected.caption}
                     </p>
                     <h3
-                      className="font-serif font-bold mb-6"
-                      style={{ fontSize: "clamp(20px, 2vw, 26px)", lineHeight: "1.15", letterSpacing: "-0.02em", color: "#F8F7F4" }}
+                      className="font-sans font-bold mb-6"
+                      style={{ fontSize: "clamp(25px, 2vw, 26px)", lineHeight: "1.15", letterSpacing: "-0.02em", color: "#F8F7F4" }}
                     >
                       {selected.title}
                     </h3>
-                    <p className="text-[14px] leading-[1.85]" style={{ color: "#9A9994" }}>
+                    <p className="text-[17px] leading-[1.85]" style={{ color: "#9A9994" }}>
                       {selected.story}
                     </p>
                   </div>

@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Linkedin, Mail, Github, ScrollText } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 const NAV_ITEMS = [
-  { label: "Selected Work", href: "/#work" },
+  // { label: "Selected Work", href: "/#work" },
   { label: "Experience", href: "/#experience" },
   { label: "About", href: "/#about" },
   { label: "Beyond Work", href: "/#beyond" },
@@ -150,7 +151,7 @@ export function Navbar({ variant = "page" }: NavbarProps) {
 }
 
 interface NavSocialIconProps {
-  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>;
+  icon: LucideIcon;
   href: string;
   label: string;
 }
